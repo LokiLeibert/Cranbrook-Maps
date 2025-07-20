@@ -1,3 +1,6 @@
+# Route Finder Mobile
+# 29 January 2025 20:20
+
 # Implementation of the A-Star heuristic route-finding algorithm
 # A-star is a prioritized depth-first search following the path of least-expected cost
 # For appropriate heuristics, the graph is 'optimal' in its search efficiency
