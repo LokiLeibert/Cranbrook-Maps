@@ -1,2 +1,4 @@
-pygame
-time
+bcrypt
+numpy
+pillow
+pip
