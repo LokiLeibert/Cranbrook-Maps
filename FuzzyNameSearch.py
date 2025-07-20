@@ -1,3 +1,7 @@
+# Route Finder Mobile
+# FuzzyNameSearch.py
+# 29 January 2025 20:20
+
 # Finds the best match of a text string in a list of names
 
 # A points scoring system is used that scores +length^2 for each matched fragment of text,
@@ -86,6 +90,11 @@ def match(input_text, target):
     match_string = simplify_name(input_text)
     unmatched_string = ""
     total_score = 0
+    if len(remaining_target) > 0 and len(match_string) > 0:
+        if remaining_target[0] == match_string[0]:
+           total_score += 3
+        if remaining_target[-1] in partial_allowed[match_string[0]]:
+            total_score += 1
     while len(match_string) > 0:
         best_index, best_score = None, 0
         target_score = len(match_string) * (len(match_string) - 1)
@@ -107,10 +116,13 @@ def match(input_text, target):
     return total_score
 
 
-def find_best_match(input_string, target_names):
+def find_best_match(input_string, target_names, n=1):
     matches = [(target_name, match(input_string, target_name), i) for i, target_name in enumerate(target_names)]
     matches.sort(key=lambda x: x[1], reverse=True)
     best_match, best_score, best_index = matches[0]
     if best_score < -len(input_string):
-        return None
-    return best_index
+        return []
+    elif n == 1:
+        return best_match
+    else:
+        return [x[0] for x in matches[:n] if x[1] >= len(input_string) * 2]
