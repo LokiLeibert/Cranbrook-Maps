@@ -45,8 +45,6 @@ The most significant features are:
 - human-readable navigation file format
 - typo-tolerant fuzzy-finder for locations
 
-A detailed technical overview is found in the file [Overview](Overview.md).
-
 ## Customization and Contribution
 
 Tools are available for creating new maps and administering the user database. Please contact the maintainer of this project if you wish to create your own version for your school.
