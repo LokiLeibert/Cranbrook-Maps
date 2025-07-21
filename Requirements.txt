@@ -2,3 +2,4 @@ bcrypt
 numpy
 pillow
 pip
+pysqlcipher3
