@@ -79,7 +79,7 @@ class RouteFinder:
         self.map_drag_start = None
         self.canvas.bind("<ButtonPress-1>", self.start_drag)
         self.canvas.bind("<B1-Motion>", self.drag_map)
-        self.root.bind("<KeyPress-+>", self.zoom_in_map)
+        self.root.bind("<KeyPress-=>", self.zoom_in_map)
         self.root.bind("<KeyPress-minus>", self.zoom_out_map)
         self.root.bind("<KeyPress-s>", self.start_mode)
         self.canvas.bind("<Configure>", self.update_display)
