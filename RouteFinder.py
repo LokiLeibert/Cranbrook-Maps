@@ -643,11 +643,6 @@ class RouteFinder:
             priority=4
         )
         self.add_button(
-            tag="nav_p",
-            image=self.resources.load("Screen 4/Prev Button", 80),
-            location=(25,663),
-            command=self.prev_leg)
-        self.add_button(
             tag="nav_n",
             image=self.resources.load("Screen 4/Next button", 80),
             location=(295, 663),
@@ -730,7 +725,7 @@ class RouteFinder:
                 if highlight:
                     node_color = "#e04040"
                 if node_index == len(self.route) - 1:
-                    node_color = "#ffe040"
+                    node_color = "#a3ced9"
                 self.canvas.itemconfig(route_ovals[node_index], fill=node_color)
             route_lines = self.components.get_asset('route_lines')
             for route_index, route_leg in enumerate(self.route_coordinates):
